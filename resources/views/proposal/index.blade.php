@@ -28,8 +28,8 @@
                             <td> {{$proposal->description}}</td>
                             <td> {{$proposal->date}}</td>
                             <td> {{$proposal->budget}}</td>
-                            <td> <a class="btn btn-sm btn-primary" href=""> View </a> </td>
-                            <td> <a class="btn btn-sm btn-success" href=""> Update </a> </td>
+                            <td> <a class="btn btn-sm btn-primary" href="{{route('proposal.show',$proposal->id)}}"> View </a> </td>
+                            <td> <a class="btn btn-sm btn-success" href="{{route('proposal.edit',$proposal->id)}}"> Update </a> </td>
                             <td> <button type='submit' class="btn btn-sm btn-danger" > Delete </button> </td>
 
                             
@@ -38,6 +38,7 @@
                         @endforeach
                         
                     </table>
+                    {!! $proposals->links() !!}
                 </div>
 
 
